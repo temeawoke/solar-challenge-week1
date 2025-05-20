@@ -1,0 +1,2 @@
+*.csv filter=lfs diff=lfs merge=lfs -text
+my-project/cleaned_benin_solar_data.csv filter=lfs diff=lfs merge=lfs -text
