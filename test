@@ -1,0 +1,28 @@
+plt.figure(figsize=(12,6))
+plt.plot(df['timestamp'], df['energy_output_kwh'], color='orange')
+plt.title('Daily Energy Output in Benin')
+plt.xlabel('Date')
+plt.ylabel('Energy Output (kWh)')
+plt.grid(True)
+plt.show()
+
+
+
+
+plt.figure(figsize=(10,6))
+sns.heatmap(df.corr(), annot=True, cmap='coolwarm')
+plt.title('Correlation Matrix')
+plt.show()
+
+
+sns.histplot(df['energy_output_kwh'], kde=True)
+plt.title('Distribution of Energy Output')
+plt.show()
+
+
+df['month'] = df['timestamp'].dt.month
+df['hour'] = df['timestamp'].dt.hour
+plt.figure(figsize=(10,5))
+sns.boxplot(x='month', y='energy_output_kwh', data=df)
+plt.title('Energy Output by Month')
+plt.show()
